@@ -39,7 +39,15 @@ class UsersController extends Controller
     public function create()
     {
         //
-        return view('admin.user.add');
+        if(Session::has('Login'))
+        {
+//            Session::flash('login_user','Welcome To Admin Page');
+            return view('admin.user.add');
+        }
+    else
+        {
+            return redirect ('/login') ;
+        }
     }
 
     /**
@@ -84,7 +92,16 @@ class UsersController extends Controller
         //
         $user = User::findOrFail($id);
 
-        return view('admin.user.edit',compact('user'));
+        if(Session::has('Login'))
+        {
+//            Session::flash('login_user','Welcome To Admin Page');
+            return view('admin.user.edit',compact('user'));
+        }
+    else
+        {
+            return redirect ('/login') ;
+        }
+
     }
 
     /**
