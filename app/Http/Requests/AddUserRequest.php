@@ -38,14 +38,14 @@ class AddUserRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'أدخل إسم المستخدم',
-            'email.required' => 'أدخل البريد الإلكتروني',
-            'password.required' => 'أدخل كلمة المرور',
-            'phone.required' => 'أدخل رقم الهاتف',
-            'email.unique' => 'هذا البريد الإلكتروني تم استخدامه',
-            'name.regex' => 'إسم المستخدم غير صالح',
-            'phone.regex' => 'الهاتف المحمول غير صالح',
-            'password.confirmed' => 'كلمة المرور غير مطابقة',
+            'email.unique' => 'This email is used',
+            'password.confirmed' => 'password and confirm not identical',
+            'name.required' => 'Enter Username',
+            'email.required' => 'Enter Email',
+            'password.required' => 'Enter password',
+            'phone.required' => 'Enter phone',
+            'name.regex' => 'Invalid Username',
+            'phone.regex' => 'Invalid Phone number',
 
         ];
     }

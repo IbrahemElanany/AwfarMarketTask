@@ -1,7 +1,7 @@
 @extends('admin.layouts.layout')
 
 @section('title')
-    تعديل عضو
+    Edit User
 @stop
 
 @section('header')
@@ -15,7 +15,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-                        تعديل العضو "
+                        Edit User "
                         {{$user->name}}
                         "
                     </h1>
@@ -32,12 +32,11 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{url('/adminpanel')}}">الرئيسية</a></li>
-                        <li class="breadcrumb-item"><a href="{{url('/adminpanel/users')}}">التحكم في الأعضاء</a></li>
-                        <li class="breadcrumb-item"><a href="{{url('/adminpanel/users/create')}}">إضافة عضو جديد</a></li>
+                        <li class="breadcrumb-item"><a href="{{url('/adminpanel')}}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{url('/adminpanel/users')}}">Control Users</a></li>
                         <li class="breadcrumb-item active"><a href="{{url('/adminpanel/users/'.$user->name.'/edit')}}">
 
-                                تعديل العضو "
+                                Edit User "
                                 {{$user->name}}
                                 "
 
@@ -56,7 +55,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">
-                             تعديل العضو "
+                            Edit User "
                             {{$user->name}}
                             "
                         </h3>
@@ -92,7 +91,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">
-                            تعديل كلمة المرور
+                            Edit password
                         </h3>
                     </div>
 
@@ -124,7 +123,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-12">
-                                {!! Form::submit('تنفيـــــذ',['class'=>'btn btn-warning']) !!}
+                                {!! Form::submit('Submit',['class'=>'btn btn-warning']) !!}
                                 <i class="fa fa-btn fa-user" style="color: #FFFFFF"></i>
                             </div>
                         </div>

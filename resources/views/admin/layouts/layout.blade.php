@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dashboard</title>
+    <title>Admin Panel</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -33,7 +33,7 @@
     @yield('header')
 
 </head>
-<body class="hold-transition sidebar-mini" style="direction: rtl">
+<body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
     <!-- Navbar -->
@@ -42,7 +42,10 @@
         <ul class="navbar-nav">
 
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">الرئيسية</a>
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{url('/logout')}}" class="nav-link">Logout</a>
             </li>
 
         </ul>
@@ -56,7 +59,7 @@
         <a href="index3.html" class="brand-link">
             <img src="{{url('admin/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3 pull-right"
                  style="opacity: .8">
-            <span class="brand-text font-weight-light">التحكم في الأعضاء</span>
+            <span class="brand-text font-weight-light">Control Users</span>
         </a>
 
         <!-- Sidebar -->

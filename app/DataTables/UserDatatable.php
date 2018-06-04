@@ -57,13 +57,9 @@ class UserDatatable extends DataTable
                 'buttons'=>[
                     [
                         'extend' =>'create',
-                        'text'=>'<i class="fa fa-plus">  إضافة عضو</i>',
+                        'text'=>'<i class="fa fa-plus">  Add User</i>',
                         'className'=>'form-group btn btn-info ml-2',
                     ],
-                    ['extend'=>'print','className'=>'form-group btn btn-primary ml-2','text'=>'<i class="fa fa-print">  طباعة  </i>'],
-//                            ['extend'=>'csv','className'=>'btn btn-info','text'=>'<i class="fa fa-file"> Export CSV</i>'],
-                    ['extend'=>'excel','className'=>'form-group btn btn-success ml-2','text'=>'<i class="fa fa-file"> تصدير إكسيل </i>'],
-                    ['extend'=>'reload','className'=>'form-group btn btn-default','text'=>'<i class="fa fa-refresh">  إعادة تحميل</i>'],
                 ],
 
                 "initComplete"=> "function () {
@@ -78,24 +74,9 @@ class UserDatatable extends DataTable
                                 });
                             });
                         }",
-                'language'=> [
-                    "sProcessing"=>  "جاري التحميل...",
-                    "sLengthMenu"=>   "أظهر _MENU_ مُدخلات",
-                    "sZeroRecords"=> "لم يُعثر على أية سجلات",
-                    "sInfo"=>         "إظهار _START_ إلى _END_ من أصل _TOTAL_ مُدخل",
-                    "sInfoEmpty"=>    "يعرض 0 إلى 0 من أصل 0 سجلّ",
-                    "sInfoFiltered"=> "(منتقاة من مجموع _MAX_ مُدخل)",
-                    "sInfoPostFix"=>  "",
-                    "sSearch"=>      " ابحث : ",
-                    "sUrl"=>         "",
-                    "oPaginate"=>[
-                        "sFirst"=>    "الأول",
-                        "sPrevious"=> "السابق",
-                        "sNext" =>    "التالي",
-                        "sLast"=>     "الأخير"
-                    ],
 
-                ]
+
+
             ]);
     }
 
@@ -119,32 +100,32 @@ class UserDatatable extends DataTable
             [
                 'name'  => 'name',
                 'data'  => 'name',
-                'title' => 'الإسم'
+                'title' => 'Name'
             ],
             [
                 'name'  => 'email',
                 'data'  => 'email',
-                'title' => 'البريد الإلكتروني'
+                'title' => 'Email'
             ],
             [
                 'name'  => 'phone',
                 'data'  => 'phone',
-                'title' => 'رقم التليفون'
+                'title' => 'phone #'
             ],
             [
                 'name'  => 'created_at',
                 'data'  => 'created_at',
-                'title' => 'تم الإنشاء'
+                'title' => 'Created_at'
             ],
             [
                 'name'  => 'updated_at',
                 'data'  => 'updated_at',
-                'title' => 'تم التحديث'
+                'title' => 'Updated_at'
             ],
             [
                 'name'       => 'edit',
                 'data'       => 'edit',
-                'title'      => 'تعديل',
+                'title'      => 'Edit',
                 'exportable' => false,
                 'printable'  => false,
                 'orderable'  => false,
@@ -153,7 +134,7 @@ class UserDatatable extends DataTable
             [
                 'name'       => 'delete',
                 'data'       => 'delete',
-                'title'      => 'حذف',
+                'title'      => 'Delete',
                 'exportable' => false,
                 'printable'  => false,
                 'orderable'  => false,

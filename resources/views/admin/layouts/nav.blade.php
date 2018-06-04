@@ -2,7 +2,7 @@
     <a href="#" class="nav-link active">
         <i class="nav-icon fa fa-cogs"></i>
         <p>
-            التحكم في الأعضاء
+            Control Users
             <i class="right fa fa-angle-left"></i>
         </p>
     </a>
@@ -10,13 +10,13 @@
         <li class="nav-item">
             <a href="{{url('/adminpanel/users/create')}}" class="nav-link">
                 <i class="fa fa-user nav-icon"></i>
-                <p>إضافة عضو</p>
+                <p>Add User</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{url('/adminpanel/users')}}" class="nav-link">
                 <i class="fa fa-users nav-icon"></i>
-                <p>كل الأعضاء</p>
+                <p>All Users</p>
             </a>
         </li>
 

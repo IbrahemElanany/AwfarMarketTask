@@ -9,7 +9,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
-
+use DB ;
 class UsersController extends Controller
 {
     /**
@@ -20,7 +20,15 @@ class UsersController extends Controller
     public function index(UserDatatable $user)
     {
         //
+        if(Session::has('Login'))
+        {
+//            Session::flash('login_user','Welcome To Admin Page');
         return $user->render('admin.user.index');
+}
+    else
+        {
+            return redirect ('/login') ;
+}
     }
 
     /**
@@ -47,10 +55,10 @@ class UsersController extends Controller
             'name' => $request['name'],
             'email' => $request['email'],
             'phone' => $request['phone'],
-            'password' => Hash::make($request['password']),
+            'password' => $request['password'],
         ]);
 
-        Session::flash('create_user','تم إضافة العضو بنجاح');
+        Session::flash('create_user','User Added Successfully');
         return redirect('/adminpanel/users');
     }
 
@@ -93,7 +101,7 @@ class UsersController extends Controller
 
         $user->update($request->all());
 
-        Session::flash('update_user','تم تعديل العضو بنجاح');
+        Session::flash('update_user','User Edited Successfully');
         return redirect('/adminpanel/users');
     }
 
@@ -101,13 +109,13 @@ class UsersController extends Controller
 
         $user = User::findOrFail($request->id);
 
-        $password = bcrypt($request->password);
+        $password = $request->password;
 
 //        $user->fill(['password'=>$password])->save();
 
         $user->update(['password'=>$password]);
 
-        Session::flash('update_user_password','تم تعديل كلمة المرور بنجاح');
+        Session::flash('update_user_password','password changed Successfully');
         return redirect()->back();
 
     }
@@ -122,7 +130,32 @@ class UsersController extends Controller
     {
         //
         $user = User::findOrFail($id)->delete();
-        Session::flash('delete_user','تم حذف العضو بنجاح');
+        Session::flash('delete_user','User Deleted successfully');
         return redirect()->back();
     }
+
+
+    public function Do_login(Request $request){
+        $email = $request->email;
+        $select = DB::table('users')->where('email',$email)->get();
+        if(count($select) > 0)
+        {
+            if($request->password == $select[0]->password)
+            {
+              Session()->put('Login', $select[0]->password) ;
+              return redirect('/adminpanel/users');
+            }elseif($request->password != $select[0]->password){
+                return redirect('/login');
+            }
+        }else return redirect('/login') ;
+    }
+
+
+    public function logout()
+    {
+        Session::forget('Login');
+        return redirect('/login/');
+    }
+
+
 }

@@ -1,7 +1,7 @@
 @extends('admin.layouts.layout')
 
 @section('title')
-    التحكم في الأعضاء
+    Control Users
 @stop
 
 @section('header')
@@ -15,12 +15,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>التحكم في الأعضاء</h1>
+                    <h1>Control Users</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{url('/adminpanel/users')}}">الرئيسية</a></li>
-                        <li class="breadcrumb-item active"><a href="{{url('/adminpanel/users')}}">التحكم في الأعضاء</a></li>
+                        <li class="breadcrumb-item"><a href="{{url('/adminpanel/users')}}">Home</a></li>
+                        <li class="breadcrumb-item active"><a href="{{url('/adminpanel/users')}}">Control Users</a></li>
                     </ol>
                 </div>
             </div>
@@ -33,7 +33,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">كل الأعضاء</h3>
+                        <h3 class="card-title">All Users</h3>
                         @if(Session::has('delete_user'))
 
                             <div class="alert alert-danger">{{session('delete_user')}}</div>
@@ -49,6 +49,12 @@
                         @if(Session::has('update_user'))
 
                             <div class="alert alert-success">{{session('update_user')}}</div>
+
+                        @endif
+
+                        @if(Session::has('login_user'))
+
+                            <div class="alert alert-success">{{session('login_user')}}</div>
 
                         @endif
                     </div>
@@ -73,29 +79,3 @@
     @endpush
 @stop
 
-
-{{--@section('footer')--}}
-
-{{----}}
-
-{{--<script type="text/javascript">--}}
-{{--$(function () {--}}
-{{--$('#example2').DataTable({--}}
-
-{{--"language": {--}}
-{{--"url": "{{ Request::root()  }}/admin/custom/Arabic.json"--}}
-{{--},--}}
-
-{{--"paging": true,--}}
-{{--"lengthChange": true,--}}
-{{--"searching": true,--}}
-{{--"ordering": true,--}}
-{{--"info": true,--}}
-{{--"autoWidth": true,--}}
-
-
-
-{{--});--}}
-{{--});--}}
-{{--</script>--}}
-{{--@stop--}}

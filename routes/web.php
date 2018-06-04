@@ -14,9 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::post('/dologin/', 'UsersController@Do_login');
+
+Route::get('/logout/', 'UsersController@logout');
 
 Route::resource('/adminpanel/users', 'UsersController');
 
 Route::post('/adminpanel/users/{id}', 'UsersController@changePassword');
+
 
 Route::get('/adminpanel/users/{id}/delete', 'UsersController@destroy');

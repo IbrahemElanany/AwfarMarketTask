@@ -34,12 +34,12 @@ class EditUserRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'أدخل إسم المستخدم',
-            'email.required' => 'أدخل البريد الإلكتروني',
-            'password.required' => 'أدخل كلمة المرور',
-            'phone.required' => 'أدخل رقم الهاتف',
-            'name.regex' => 'إسم المستخدم غير صالح',
-            'phone.regex' => 'الهاتف المحمول غير صالح',
+            'name.required' => 'Enter Username',
+            'email.required' => 'Enter Email',
+            'password.required' => 'Enter password',
+            'phone.required' => 'Enter phone',
+            'name.regex' => 'Invalid Username',
+            'phone.regex' => 'Invalid Phone number',
 
         ];
     }
